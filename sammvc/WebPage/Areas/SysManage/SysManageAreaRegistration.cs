@@ -15,9 +15,10 @@ namespace WebPage.Areas.SysManage
         public override void RegisterArea(AreaRegistrationContext context) 
         {
             context.MapRoute(
-                "SysManage_default",
-                "SysManage/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                name: "SysManage_default",
+                url: "SysManage/{controller}/{action}/{id}",
+                defaults: new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "WebPage.Areas.SysManage.Controllers" }
             );
         }
     }
